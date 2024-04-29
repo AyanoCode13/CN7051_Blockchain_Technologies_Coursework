@@ -2,32 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+
+@layer components {
+  .navbar {
+    @apply w-full bg-gradient-to-r from-blue-500 bg-blue-950 flex justify-evenly sticky;
+  }
+  .navbar-logo {
+    @apply text-4xl font-bold p-2 m-5 flex justify-center items-center text-white md:rounded-md md:bg-blue-400 md:px-6 md:py-3 md:hover:bg-blue-600 md:shadow-lg md:shadow-blue-200 hover:shadow-lg md:hover:shadow-red-950;;
+  }
+  .navbar-list {
+    @apply md:flex items-center md:gap-3 p-3;
+  }
+  .navbar-list-item {
+    @apply text-center text-white font-bold  md:rounded-full md:bg-blue-400 md:px-6 md:py-3 md:hover:bg-blue-600 md:shadow-lg md:shadow-blue-200 hover:shadow-lg md:hover:shadow-red-950;
+  }
+
+  .card {
+    @apply flex flex-col border-2  border-white rounded-md p-3 text-white w-60 bg-gradient-to-r from-blue-500 to-blue-950
+
+  }
+  .card:hover{
+    @apply shadow-2xl shadow-white
+  }
+  .card-title {
+    @apply lg:text-2xl font-bold text-center mt-2 text-balance flex;
+  }
+  .card-image {
+    @apply w-full h-5/6;
+  }
+  .card-description {
+    @apply text-start md:text-lg rounded-2xl text-pretty;
+  }
+  .card-list {
+    @apply flex flex-col ;
+  }
+  .card-footer {
+    @apply flex justify-evenly items-baseline;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+body{
+  @apply bg-blue-800
 }
