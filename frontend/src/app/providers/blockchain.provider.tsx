@@ -4,6 +4,7 @@ import { createContext, useEffect, useState } from "react";
 import Web3 from "web3";
 import abi from "../../artifacts/contracts/NFTicket.sol/NFTicket.json";
 import { getContract, getWeb3 } from "../utils/web3";
+import MetamaskPage from "../(events)/metamask";
 
 export const BlockchainProvider = createContext({});
 
@@ -39,6 +40,9 @@ export function BlockchainContextProvider({
 
     onInit();
   });
+  if(!envoriment.ethereum){
+    return <MetamaskPage />
+  }
 
   return (
     <BlockchainProvider.Provider

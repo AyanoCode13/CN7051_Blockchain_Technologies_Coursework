@@ -2,7 +2,6 @@
 
 import { BlockchainProvider } from "@/app/providers/blockchain.provider"
 import { createQR } from "@/app/utils/server.functions"
-import { getWeb3 } from "@/app/utils/web3"
 import { GetEventDTO } from "@/types/event.dto"
 import { useRouter } from "next/navigation"
 import { useContext } from "react"
@@ -11,6 +10,7 @@ import { PiArmchairFill } from "react-icons/pi"
 
 
 export default function BuyTicketButton ({event, seat, taken}:{event:GetEventDTO, seat:number, taken:boolean}) {
+    
     const context:any = useContext(BlockchainProvider)
     const router = useRouter()
 

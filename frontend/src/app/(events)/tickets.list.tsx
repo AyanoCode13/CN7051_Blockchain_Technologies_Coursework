@@ -28,7 +28,7 @@ export default function TicketsList(){
      
           return (
             <React.Fragment key={ticket.id}>
-              {(context.account && !ticket.date_unpinned && ticket.metadata.keyvalues.owner.toUpperCase() === context.account.toUpperCase() ) && <TicketCard ticket={ticket}/>}
+              {(context.account &&ticket.metadata.keyvalues.owner && !ticket.date_unpinned && ticket.metadata.keyvalues.owner.toUpperCase() === context.account.toUpperCase() ) && <TicketCard ticket={ticket}/>}
             </React.Fragment>
             
             
